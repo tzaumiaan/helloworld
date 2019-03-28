@@ -35,5 +35,21 @@
 - What's truthiness in Python?
   - `is` checks if two items belong to the same object, while `==` checks the values
   - `1==1.0` is true, while `1 is 1.0` is false
-  - `a = 'a'` and `b = 'a'`, `a==b` is true, but `a is b` is false
+  - `a = 'a'` and `b = 'a'`, `a==b` and `a is b` are both true (same constant string object)
+  - `a = '{}'.format('a')` and `b = '{}'.format('a')`, then `a is b` is false (different string objects)
+  - `a = (0,1)` and `b = (0,1)`, `a==b` is true (same value), but `a is b` is false (different list objects)
   - Ref: [Truthiness in Python](https://www.udacity.com/wiki/cs258/truthiness-in-python)
+- `a` and `b` are two lists of booleans, what happens of `a and`/`or b`, `a &`/`| b`, `a *`/`+ b`?
+  - Because `a` and `b` are both non empty list, both are considered `True` for `and/or` operator.
+    `a and b` will give you the value of `b`, and `a or b` the value of `a`
+  - `a &`/`| b` will generate `TypeError: unsupported operand type(s) for &`/`|: 'list' and 'list'`
+  - `a * b` will generate `TypeError: can't multiply sequence by non-int of type 'list'`
+  - `a + b` will give you the concatenated list, `[a, b]`
+  - Way to do element-wise logic operation on two boolean lists:
+    ```
+    import numpy as np
+    a, b = [True, True, False], [True, False, False]
+    result = np.array(a) & np.array(b)
+    ```
+- How to get the files in a folder and sort them with creation time?
+  - `TODO`
