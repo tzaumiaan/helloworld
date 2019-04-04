@@ -1,5 +1,21 @@
 # Some notes and tips about Python, Tensorflow, PyTorch, and so on...
 
+## Deep learning concepts
+- In reinforcement learning, what's on-policy and off-policy?
+  - Ref: [揭开强化学习面纱一-on-policy vs off-policy](https://zhuanlan.zhihu.com/p/48513510)
+- In reinforcement learning, what's model-based and model-free learning?
+  - Model-based: we have all transitions and their reward as the whole MDP,
+    then maximize the value function to get a best policy
+  - Model-free learning: we don't have all transitions and their reward; 
+    we only know the transition by observing every consequence of action and the reward. 
+    Then based on such information we learn and generate a policy
+  - Ref: [What is the difference between model-based and model-free reinforcement learning?](
+    https://www.quora.com/What-is-the-difference-between-model-based-and-model-free-reinforcement-learning
+    )
+- What's backprapagation through time (BPTT) and its derivation?
+  - Mathmatical derivation: [随时间反向传播](https://www.cnblogs.com/wacc/p/5341670.html)
+  - Derivation and coding example: [基于时间的反向传播算法BPTT](https://blog.csdn.net/snaillup/article/details/78643410)
+
 ## Tensorflow
 - What's embedding layer?
   - Turn the one-hot input to an attribute vector with far less dimension
